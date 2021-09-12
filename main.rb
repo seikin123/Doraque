@@ -1,4 +1,9 @@
 class Brave
+  # attr_readerの記述でゲッターを省略することができる
+  # 複数の値を同時に指定することができる
+  attr_reader :name, :hp, :offense, :defense
+  # セッターゲッターを一括定義
+  attr_accessor :hp
   # 引数に**を記述：ハッシュしか受け取れなくなる
   def initialize(**params)
     @name = params[:name]
@@ -7,27 +12,10 @@ class Brave
     @defense = params[:defense]
   end
 
-  def name
-    @name
-  end
-
-  def hp
-    @hp
-  end
-
-  def offense
-    @offense
-  end
-
-  def defense
-    @defense
-  end
-
 end
 
 brave = Brave.new(name: "テリー", hp: 500, offense: 150, defense: 100)
 
-puts "NAME：#{brave.name}"
-puts "HP：#{brave.hp}"
-puts "OFFENSE：#{brave.offense}"
-puts "DEFENSE：#{brave.defense}"
+brave.hp -= 30
+
+puts "#{brave.name}はダメージを受けた! 残りHPは#{brave.hp}だ"
