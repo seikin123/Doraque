@@ -24,4 +24,14 @@ class Monster
 
   attr_accessor :hp
 
+  # **paramsにすることでハッシュ形式の引数しか受け付けないようにできる
+  def initialize(**params)
+    @name = params[:name]
+    @hp = params[:hp]
+    @offense = params[:offense]
+    @defense = params[:defense]
+  end
+
 end
+
+monster = Monster.new(name: "スライム", hp: 250, offense: 200, defense: 100)
