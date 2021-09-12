@@ -13,15 +13,16 @@ class Brave
   end
 
   def attack(monster)
-    puts "テスト：#{monster.name}のHPを表示 -> #{monster.hp}"
+    
+    # ダメージ計算の処理を追加
+    damage = @offense - monster.defense
+    puts monster.hp - damage
   end
 
 end
 
-
 class Monster
   attr_reader :name, :offense, :defense
-  
   attr_accessor :hp
   
   # **paramsにすることでハッシュ形式の引数しか受け付けないようにできる
