@@ -1,7 +1,7 @@
 class Brave
   # attr_readerの記述でゲッターを省略することができる
   # 複数の値を同時に指定することができる
-  attr_reader :name, :hp, :offense, :defense
+  attr_reader :name, :offense, :defense
   # セッターゲッターを一括定義
   attr_accessor :hp
   # 引数に**を記述：ハッシュしか受け取れなくなる
@@ -13,9 +13,15 @@ class Brave
   end
 
 end
-
 brave = Brave.new(name: "テリー", hp: 500, offense: 150, defense: 100)
 
 brave.hp -= 30
 
 puts "#{brave.name}はダメージを受けた! 残りHPは#{brave.hp}だ"
+
+class Monster
+  attr_reader :name, :offense, :defense
+
+  attr_accessor :hp
+
+end
