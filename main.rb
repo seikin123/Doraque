@@ -16,7 +16,12 @@ class Brave
     
     # ダメージ計算の処理を追加
     damage = @offense - monster.defense
-    puts monster.hp - damage
+    # 自己代入：monster.hpからdamageを引いた値をmonster.hpに代入
+    monster.hp -= damage
+
+    # メッセージを追記
+    puts "#{monster.name}は#{damage}のダメージを受けた"
+    puts "#{monster.name}の残りHPは#{monster.hp}だ"
   end
 
 end
